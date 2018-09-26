@@ -1,0 +1,13 @@
+lint:
+  image: node:8.12-alpine
+  stage: test
+  script:
+    - npm install
+    - npm run lint
+
+unit test:
+  image: node:8.12-alpine
+  stage: test
+  script:
+    - npm install
+    - npm run test:unit
