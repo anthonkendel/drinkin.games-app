@@ -1,12 +1,18 @@
 <template>
   <div id="app">
-    <Navbar />
-    <div class="columns">
-      <div class="column is-narrow">
-        <SidebarMenu />
-      </div>
-      <div class="column router-view">
-        <router-view />
+    <div v-if="!authentication && !noAuthentication">
+      <SignUp v-if="signUp" />
+      <SignIn v-else />
+    </div>
+    <div v-else-if="authentication || noAuthentication">
+      <Navbar />
+      <div class="columns">
+        <div class="column is-narrow">
+          <SidebarMenu />
+        </div>
+        <div class="column router-view">
+          <router-view />
+        </div>
       </div>
     </div>
   </div>
@@ -15,10 +21,20 @@
 <script>
 import Navbar from '@/components/Navbar';
 import SidebarMenu from '@/components/SidebarMenu';
+import SignIn from './components/SignIn';
+import SignUp from './components/SignUp';
+import { mapState } from 'vuex';
 
 export default {
   name: 'DrinkinGamesApp',
-  components: { Navbar, SidebarMenu },
+  components: { SignUp, SignIn, Navbar, SidebarMenu },
+  computed: {
+    ...mapState({
+      signUp: 'signUp',
+      authentication: 'authentication',
+      noAuthentication: 'noAuthentication',
+    }),
+  },
 };
 </script>
 

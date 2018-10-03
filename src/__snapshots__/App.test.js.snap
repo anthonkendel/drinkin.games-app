@@ -4,189 +4,142 @@ exports[`App.vue should match snapshot 1`] = `
 <div
   id="app"
 >
-  <nav
-    class="navbar is-light"
-    role="navigation"
-  >
-    <div
-      class="navbar-brand"
-    >
-      <a
-        class="navbar-item"
-        href="/"
-      >
-        <h1
-          class="title is-5"
-        >
-          Drinkin games
-        </h1>
-      </a>
-       
-      <a
-        class="navbar-burger is-light"
-        role="button"
-      >
-        <span />
-         
-        <span />
-         
-        <span />
-      </a>
-    </div>
-     
-    <div
-      class="navbar-menu"
+  <div>
+    <section
+      class="section"
     >
       <div
-        class="navbar-start"
-      />
-       
-      <div
-        class="navbar-end"
-      />
-    </div>
-  </nav>
-   
-  <div
-    class="columns"
-  >
-    <div
-      class="column is-narrow"
-    >
-      <aside
-        class="menu"
+        class="section"
       >
-        <p
-          class="menu-label"
+        <div
+          class="columns is-centered"
         >
-          
-    General
-  
-        </p>
-         
-        <ul
-          class="menu-list"
-        >
-          <li>
-            <a>
-              Dashboard
-            </a>
-          </li>
-           
-          <li>
-            <a>
-              Customers
-            </a>
-          </li>
-        </ul>
-         
-        <p
-          class="menu-label"
-        >
-          
-    Administration
-  
-        </p>
-         
-        <ul
-          class="menu-list"
-        >
-          <li>
-            <a>
-              Team Settings
-            </a>
-          </li>
-           
-          <li>
-            <a
-              class="is-active"
+          <div
+            class="column is-2"
+          >
+            <h2
+              class="title"
             >
-              Manage Your Team
-            </a>
+              Sign in
+            </h2>
              
-            <ul>
-              <li>
-                <a>
-                  Members
-                </a>
-              </li>
+            <form>
+              <div
+                class="field"
+              >
+                <label
+                  class="label"
+                  for="email"
+                >
+                  
+              Email
+            
+                </label>
+                 
+                <p
+                  class="control has-icons-right"
+                >
+                  <input
+                    class="input"
+                    id="email"
+                    placeholder="Email"
+                    required="required"
+                    type="email"
+                  />
+                   
+                  <span
+                    class="icon is-right"
+                  >
+                    <i
+                      class="fas fa-user"
+                    />
+                  </span>
+                </p>
+              </div>
                
-              <li>
-                <a>
-                  Plugins
-                </a>
-              </li>
+              <div
+                class="field"
+              >
+                <label
+                  class="label"
+                  for="password"
+                >
+                  
+              Password
+            
+                </label>
+                 
+                <p
+                  class="control has-icons-right"
+                >
+                  <input
+                    class="input"
+                    id="password"
+                    placeholder="Password"
+                    required="required"
+                    type="password"
+                  />
+                   
+                  <span
+                    class="icon is-right"
+                  >
+                    <i
+                      class="fas fa-lock"
+                    />
+                  </span>
+                </p>
+              </div>
                
-              <li>
-                <a>
-                  Add a member
-                </a>
-              </li>
-            </ul>
-          </li>
-           
-          <li>
-            <a>
-              Invitations
-            </a>
-          </li>
-           
-          <li>
-            <a>
-              Cloud Storage Environment Settings
-            </a>
-          </li>
-           
-          <li>
-            <a>
-              Authentication
-            </a>
-          </li>
-        </ul>
+              <div
+                class="field is-grouped"
+              >
+                <p
+                  class="control is-expanded"
+                >
+                  <button
+                    class="button is-primary is-fullwidth"
+                  >
+                    Sign in
+                  </button>
+                </p>
+                 
+                <p
+                  class="control is-expanded"
+                >
+                  <button
+                    class="button is-text is-fullwidth"
+                    type="button"
+                  >
+                    
+                Sign up
+              
+                  </button>
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
          
-        <p
-          class="menu-label"
+        <div
+          class="columns is-centered"
         >
-          
-    Transactions
-  
-        </p>
-         
-        <ul
-          class="menu-list"
-        >
-          <li>
-            <a>
-              Payments
-            </a>
-          </li>
-           
-          <li>
-            <a>
-              Transfers
-            </a>
-          </li>
-           
-          <li>
-            <a>
-              Balance
-            </a>
-          </li>
-        </ul>
-      </aside>
-    </div>
-     
-    <div
-      class="column router-view"
-    >
-      <div
-        class="home"
-      >
+          <div
+            class="column is-2"
+          >
+            <p>
+              
+          You don't want to create an account?
+          Click 
+              <a>
+                here
+              </a>
+               to continue without an account.
         
-  Home
-
+            </p>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   </div>
 </div>
 `;
