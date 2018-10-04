@@ -1,3 +1,4 @@
+import 'regenerator-runtime/runtime';
 import App from '@/App.vue';
 import '@/firebase/firebase';
 import '@/registerServiceWorker';

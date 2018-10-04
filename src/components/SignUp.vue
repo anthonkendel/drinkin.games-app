@@ -51,15 +51,15 @@
 
             <div class="field is-grouped">
               <p class="control is-expanded">
-                <button class="button is-primary is-fullwidth">Sign up</button>
+                <button class="button is-info is-fullwidth">Sign up</button>
               </p>
               <p class="control is-expanded">
                 <button
                   type="button"
-                  class="button is-warning is-fullwidth"
+                  class="button is-text is-fullwidth"
                   @click="onCancelSignUp"
                 >
-                  Cancel sign up
+                  Cancel
                 </button>
               </p>
             </div>
