@@ -1,12 +1,14 @@
 <template>
   <div class="home">
-    Home
+    <GamesListing />
   </div>
 </template>
 
 <script>
+import GamesListing from '@/components/GamesListing';
+
 export default {
   name: 'Home',
-  components: {},
+  components: { GamesListing },
 };
 </script>
