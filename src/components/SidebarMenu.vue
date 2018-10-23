@@ -1,5 +1,5 @@
 <template>
-  <aside class="menu">
+  <aside class="menu is-hidden-touch">
     <p class="menu-label">Top rated games</p>
     <ul
       v-if="topRatedGames.length > 0"

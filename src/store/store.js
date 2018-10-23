@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import { getAverage } from '../common/filters';
 
 Vue.use(Vuex);
 
@@ -9,10 +10,6 @@ class Game {
     this.rating = rating;
     this.created = created;
   }
-}
-
-function getAverage(array) {
-  return array.reduce((p, c) => p + c, 0) / array.length;
 }
 
 export default new Vuex.Store({

@@ -3,9 +3,9 @@
     <table class="table is-hoverable is-fullwidth is-striped">
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Created</th>
-          <th>Rating</th>
+          <th class="has-text-left">Name</th>
+          <th class="has-text-left">Created</th>
+          <th class="has-text-right">Rating</th>
         </tr>
       </thead>
       <tbody>
@@ -13,9 +13,9 @@
           v-for="(game, index) in games"
           :key="index"
         >
-          <td>{{ game.name }}</td>
-          <td>{{ new Date(game.created).toDateString() }}</td>
-          <td>{{ game.rating }}</td>
+          <td class="has-text-left">{{ game.name }}</td>
+          <td class="has-text-left">{{ new Date(game.created) | dateInWords }} ago</td>
+          <td class="has-text-right">{{ game.rating | average }}</td>
         </tr>
       </tbody>
 
@@ -25,9 +25,14 @@
 
 <script>
 import { mapState } from 'vuex';
+import { dateInWords, getAverage } from '../common/filters';
 
 export default {
   name: 'GamesListing',
+  filters: {
+    average: getAverage,
+    dateInWords: dateInWords,
+  },
   computed: {
     ...mapState({
       games: 'games',
