@@ -5,5 +5,8 @@ export function dateInWords(date) {
 }
 
 export function getAverage(array) {
-  return (array.reduce((p, c) => p + c, 0) / array.length).toFixed(1);
+  if (array.length > 0) {
+    return (array.reduce((p, c) => p + c, 0) / array.length).toFixed(1);
+  }
+  return 0;
 }

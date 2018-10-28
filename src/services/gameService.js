@@ -3,11 +3,13 @@ import { firestore } from '@/firebase/firebase';
 const GAMES_COLLECTION = 'games';
 
 class Game {
-  constructor({ id, name, description, rating }) {
+  constructor({ name, description, id = '' }) {
     this.id = id;
     this.name = name;
     this.description = description;
-    this.rating = rating;
+    this.rating = [];
+    this.created = new Date();
+    this.updated = new Date();
   }
 }
 
@@ -26,11 +28,9 @@ export default {
     return games;
   },
 
-  async createGame({ name, description, rating = [] }) {
-    firestore.collection(GAMES_COLLECTION).add({
-      name,
-      description,
-      rating,
-    });
+  async createGame({ name, description }) {
+    const game = new Game({ name, description });
+    const object = { ...game };
+    firestore.collection(GAMES_COLLECTION).add(object);
   },
 };

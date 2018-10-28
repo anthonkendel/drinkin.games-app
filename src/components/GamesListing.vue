@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapState, mapActions } from 'vuex';
 import { dateInWords, getAverage } from '../common/filters';
 
 export default {
@@ -37,6 +37,12 @@ export default {
     ...mapState({
       games: 'games',
     }),
+  },
+  created() {
+    this.loadGames();
+  },
+  methods: {
+    ...mapActions({ loadGames: 'loadGames' }),
   },
 };
 </script>

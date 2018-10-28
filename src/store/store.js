@@ -1,16 +1,9 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import gameService from '@/services/gameService';
 import { getAverage } from '../common/filters';
 
 Vue.use(Vuex);
-
-class Game {
-  constructor(name, rating, created) {
-    this.name = name;
-    this.rating = rating;
-    this.created = created;
-  }
-}
 
 export default new Vuex.Store({
   state: {
@@ -18,15 +11,7 @@ export default new Vuex.Store({
     authentication: false,
     noAuthentication: false,
 
-    games: [
-      new Game('Ring of fire', [1, 4, 5], '2018-01-01'),
-      new Game('Beer game', [1, 2, 3], '2018-02-02'),
-      new Game('Kings cup', [1, 4, 5], '2018-03-03'),
-      new Game('Never have I ever', [1, 4, 5], '2018-04-04'),
-      new Game('Flip cup', [1, 4, 5], '2018-05-05'),
-      new Game('Buzz', [1, 4, 5], '2018-06-06'),
-      new Game('Drunk jenga', [5, 5, 5], '2017-07-07'),
-    ],
+    games: [],
   },
   getters: {
     getTopRatedGames(state) {
@@ -54,5 +39,9 @@ export default new Vuex.Store({
     setNoAuthentication: ({ commit }, noAuthentication) => commit('setNoAuthentication', noAuthentication),
 
     setGames: ({ commit }, games) => commit('setGames', games),
+    async loadGames({ commit }) {
+      const games = await gameService.getGames();
+      commit('setGames', games);
+    },
   },
 });
