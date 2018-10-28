@@ -69,10 +69,7 @@
 
       <div class="columns is-centered">
         <div class="column is-2">
-          <p>
-            You don't want to create an account?
-            Click <a @click="onNoAuthentication">here</a> to continue without an account.
-          </p>
+          <p>Click <a @click="onNoAuthentication">here</a> to continue without an account.</p>
         </div>
       </div>
     </div>
