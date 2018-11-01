@@ -8,10 +8,13 @@ import Buefy from 'buefy';
 import 'buefy/dist/buefy.css';
 import 'bulma';
 import Vue from 'vue';
+import authService from '@/services/authService';
 
 Vue.use(Buefy);
 
 Vue.config.productionTip = false;
+
+authService.listenOnAuthStateChanged();
 
 new Vue({
   router,

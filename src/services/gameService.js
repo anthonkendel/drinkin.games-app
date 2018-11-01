@@ -1,4 +1,4 @@
-import { firestore } from '@/firebase/firebase';
+import { firestore } from 'firebase';
 
 const GAMES_COLLECTION = 'games';
 
@@ -15,13 +15,15 @@ class Game {
 
 export default {
   async getGames() {
-    const snapshot = await firestore.collection(GAMES_COLLECTION).get();
+    const snapshot = await firestore()
+      .collection(GAMES_COLLECTION)
+      .get();
     const games = [];
     snapshot.forEach(document =>
       games.push(
         new Game({
-          id: document.id,
           ...document.data(),
+          id: document.id,
         })
       )
     );
@@ -29,8 +31,15 @@ export default {
   },
 
   async createGame({ name, description }) {
-    const game = new Game({ name, description });
-    const object = { ...game };
-    firestore.collection(GAMES_COLLECTION).add(object);
+    const game = new Game({
+      name,
+      description,
+    });
+    const object = {
+      ...game,
+    };
+    firestore()
+      .collection(GAMES_COLLECTION)
+      .add(object);
   },
 };

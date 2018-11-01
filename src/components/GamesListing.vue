@@ -13,7 +13,9 @@
           v-for="(game, index) in games"
           :key="index"
         >
-          <td class="has-text-left">{{ game.name }}</td>
+          <td class="has-text-left">
+            <router-link :to="{ name: 'GameDetails', params: { id: game.id } }">{{ game.name }}</router-link>
+          </td>
           <td class="has-text-left">{{ new Date(game.created) | dateInWords }} ago</td>
           <td class="has-text-right">{{ game.rating | average }}</td>
         </tr>

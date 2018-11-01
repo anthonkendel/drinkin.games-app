@@ -71,7 +71,7 @@
 </template>
 
 <script>
-import { auth } from '@/firebase/firebase';
+import authService from '@/services/authService';
 import { mapActions } from 'vuex';
 
 export default {
@@ -91,7 +91,7 @@ export default {
     },
     async onSubmit() {
       try {
-        await auth.createUserWithEmailAndPassword(this.email, this.password);
+        authService.createUserWithEmailAndPassword(this.email, this.password);
         this.setAuthentication(true);
       } catch (e) {
         this.setAuthentication(false);

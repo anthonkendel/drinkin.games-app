@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import gameService from '@/services/gameService';
-import { getAverage } from '../common/filters';
+import { getAverage } from '@/common/filters';
 
 Vue.use(Vuex);
 
