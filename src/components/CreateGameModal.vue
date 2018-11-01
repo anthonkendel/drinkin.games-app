@@ -71,7 +71,6 @@ export default {
         description: this.description,
       });
       this.$parent.close();
-      this.$router.go(0);
     },
   },
 };

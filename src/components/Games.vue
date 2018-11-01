@@ -12,10 +12,9 @@
         <tr
           v-for="(game, index) in games"
           :key="index"
+          @click="routeToDetails(game.id)"
         >
-          <td class="has-text-left">
-            <router-link :to="{ name: 'GameDetails', params: { id: game.id } }">{{ game.name }}</router-link>
-          </td>
+          <td class="has-text-left">{{ game.name }}</td>
           <td class="has-text-left">{{ new Date(game.created) | dateInWords }} ago</td>
           <td class="has-text-right">{{ game.rating | average }}</td>
         </tr>
@@ -30,7 +29,7 @@ import { mapState, mapActions } from 'vuex';
 import { dateInWords, getAverage } from '../common/filters';
 
 export default {
-  name: 'GamesListing',
+  name: 'Games',
   filters: {
     average: getAverage,
     dateInWords: dateInWords,
@@ -45,6 +44,9 @@ export default {
   },
   methods: {
     ...mapActions({ loadGames: 'loadGames' }),
+    routeToDetails(id) {
+      this.$router.push({ name: 'Details', params: { id } });
+    },
   },
 };
 </script>

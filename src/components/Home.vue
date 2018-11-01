@@ -1,18 +1,18 @@
 <template>
   <div class="home">
     <CreateGameButton v-if="authentication" />
-    <GamesListing />
+    <Games />
   </div>
 </template>
 
 <script>
 import { mapState } from 'vuex';
 import CreateGameButton from '@/components/CreateGameButton';
-import GamesListing from '@/components/GamesListing';
+import Games from '@/components/Games';
 
 export default {
   name: 'Home',
-  components: { GamesListing, CreateGameButton },
+  components: { Games, CreateGameButton },
   computed: {
     ...mapState({
       authentication: 'authentication',

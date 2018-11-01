@@ -1,5 +1,5 @@
 import Home from '@/components/Home.vue';
-import GameDetails from '@/components/GameDetails.vue';
+import Details from '@/components/Details.vue';
 import Vue from 'vue';
 import Router from 'vue-router';
 
@@ -11,14 +11,14 @@ const router = new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
+      name: 'Home',
       component: Home,
     },
     {
       path: '/:id',
-      name: 'GameDetails',
+      name: 'Details',
       props: true,
-      component: GameDetails,
+      component: Details,
     },
   ],
 });

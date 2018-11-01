@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
   name: 'SidebarMenu',
@@ -38,6 +38,12 @@ export default {
       topRatedGames: 'getTopRatedGames',
       newGames: 'getNewGames',
     }),
+  },
+  created() {
+    this.loadGames();
+  },
+  methods: {
+    ...mapActions({ loadGames: 'loadGames' }),
   },
 };
 </script>

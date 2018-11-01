@@ -1,10 +1,10 @@
 <template>
-  <div>Game details for {{ id }}</div>
+  <div>Details for {{ id }}</div>
 </template>
 
 <script>
 export default {
-  name: 'GameDetails',
+  name: 'Details',
   props: {
     id: {
       type: String,
