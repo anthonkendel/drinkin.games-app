@@ -1,27 +1,42 @@
 <template>
-  <div>
-    <table class="table is-hoverable is-fullwidth is-striped">
-      <thead>
-        <tr>
-          <th class="has-text-left">Name</th>
-          <th class="has-text-left">Created</th>
-          <th class="has-text-right">Rating</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr
-          v-for="(game, index) in games"
-          :key="index"
-          @click="routeToDetails(game.id)"
+  <section class="section">
+    <b-table
+      :data="games"
+      striped
+      hoverable
+    >
+      <template slot-scope="{ row }">
+        <b-table-column
+          field="name"
+          label="Name"
+          sortable
         >
-          <td class="has-text-left">{{ game.name }}</td>
-          <td class="has-text-left">{{ new Date(game.created) | dateInWords }} ago</td>
-          <td class="has-text-right">{{ game.rating | average }}</td>
-        </tr>
-      </tbody>
+          {{ row.name }}
+        </b-table-column>
+        <b-table-column
+          field="created"
+          label="Created"
+          sortable
+        >
+          {{ new Date(row.created) | dateInWords }} ago
+        </b-table-column>
+        <b-table-column
+          field="rating"
+          label="Rating"
+          sortable
+        >
+          {{ row.rating | average }}
+        </b-table-column>
+      </template>
 
-    </table>
-  </div>
+      <template slot="empty">
+        <div class="has-text-centered">
+          <h2 class="title is-4">There does not seem to be anything here right now.</h2>
+          <h3 class="subtitle">Maybe it is loading?</h3>
+        </div>
+      </template>
+    </b-table>
+  </section>
 </template>
 
 <script>

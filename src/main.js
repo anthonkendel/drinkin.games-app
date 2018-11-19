@@ -5,8 +5,6 @@ import '@/registerServiceWorker';
 import router from '@/router/router';
 import store from '@/store/store';
 import Buefy from 'buefy';
-import 'buefy/dist/buefy.css';
-import 'bulma';
 import Vue from 'vue';
 import authService from '@/services/authService';
 

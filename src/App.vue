@@ -10,8 +10,10 @@
         <div class="column is-2">
           <SidebarGames />
         </div>
-        <div class="column router-view">
-          <router-view />
+        <div class="column">
+          <section class="section">
+            <router-view />
+          </section>
         </div>
       </div>
     </div>
@@ -38,8 +40,11 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.router-view {
-  padding: 1.5rem;
-}
+<style lang="scss">
+@import '~bulma/sass/utilities/_all';
+
+$section-padding: 1.5rem 0.75rem;
+
+@import '~bulma';
+@import '~buefy/src/scss/buefy';
 </style>
