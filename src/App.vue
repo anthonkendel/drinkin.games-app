@@ -7,7 +7,7 @@
     <div v-else-if="authentication || noAuthentication">
       <Navbar />
       <div class="columns">
-        <div class="column is-narrow">
+        <div class="column is-2">
           <SidebarMenu />
         </div>
         <div class="column router-view">
