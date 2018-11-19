@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import gameService from '@/services/gameService';
 import { getAverage } from '@/common/filters';
+import createPersistedState from 'vuex-persistedstate';
 
 Vue.use(Vuex);
 
@@ -13,6 +14,7 @@ export default new Vuex.Store({
 
     games: [],
   },
+
   getters: {
     getTopRatedGames(state) {
       const games = state.games.slice(0).map(game => ({ ...game, averageRating: getAverage(game.rating) }));
@@ -33,6 +35,7 @@ export default new Vuex.Store({
 
     setGames: (state, games) => (state.games = [...games]),
   },
+
   actions: {
     setSignUp: ({ commit }, signUp) => commit('setSignUp', signUp),
     setAuthentication: ({ commit }, authentication) => commit('setAuthentication', authentication),
@@ -44,4 +47,11 @@ export default new Vuex.Store({
       commit('setGames', games);
     },
   },
+
+  plugins: [
+    createPersistedState({
+      key: 'drinkingames',
+      paths: ['signUp', 'authentication', 'noAuthentication'],
+    }),
+  ],
 });

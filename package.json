@@ -9,15 +9,16 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
-    "buefy": "0.7.0",
+    "buefy": "^0.7.0",
     "bulma": "^0.7.1",
-    "date-fns": "1.29.0",
+    "date-fns": "^1.29.0",
     "firebase": "^5.5.1",
     "regenerator": "^0.13.2",
     "register-service-worker": "^1.0.0",
     "vue": "^2.5.17",
     "vue-router": "^3.0.1",
-    "vuex": "^3.0.1"
+    "vuex": "^3.0.1",
+    "vuex-persistedstate": "^2.5.4"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
