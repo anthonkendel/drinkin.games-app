@@ -8,7 +8,7 @@
       <Navbar />
       <div class="columns">
         <div class="column is-2">
-          <SidebarMenu />
+          <SidebarGames />
         </div>
         <div class="column router-view">
           <router-view />
@@ -20,14 +20,14 @@
 
 <script>
 import Navbar from '@/components/Navbar';
-import SidebarMenu from '@/components/SidebarMenu';
+import SidebarGames from '@/components/SidebarGames';
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
 import { mapState } from 'vuex';
 
 export default {
   name: 'DrinkinGamesApp',
-  components: { SignUp, SignIn, Navbar, SidebarMenu },
+  components: { SignUp, SignIn, Navbar, SidebarGames },
   computed: {
     ...mapState({
       signUp: 'signUp',

@@ -32,7 +32,7 @@
 import { mapGetters, mapActions } from 'vuex';
 
 export default {
-  name: 'SidebarMenu',
+  name: 'SidebarGames',
   computed: {
     ...mapGetters({
       topRatedGames: 'getTopRatedGames',
