@@ -20,4 +20,8 @@ export default {
     await auth().setPersistence(auth.Auth.Persistence.LOCAL);
     return auth().signInWithEmailAndPassword(email, password);
   },
+
+  async signOut() {
+    return await auth().signOut();
+  },
 };

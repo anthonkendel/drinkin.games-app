@@ -17,7 +17,10 @@ export default new Vuex.Store({
 
   getters: {
     getTopRatedGames(state) {
-      const games = state.games.slice(0).map(game => ({ ...game, averageRating: getAverage(game.rating) }));
+      const games = state.games.slice(0).map(game => ({
+        ...game,
+        averageRating: getAverage(game.rating),
+      }));
       games.sort((a, b) => a.averageRating - b.averageRating).reverse();
       return games.slice(0, 5);
     },
@@ -34,6 +37,13 @@ export default new Vuex.Store({
     setNoAuthentication: (state, noAuthentication) => (state.noAuthentication = noAuthentication),
 
     setGames: (state, games) => (state.games = [...games]),
+
+    clearState: state => {
+      state.signUp = false;
+      state.authentication = false;
+      state.noAuthentication = false;
+      state.games = [];
+    },
   },
 
   actions: {
@@ -46,6 +56,8 @@ export default new Vuex.Store({
       const games = await gameService.getGames();
       commit('setGames', games);
     },
+
+    clearState: ({ commit }) => commit('clearState'),
   },
 
   plugins: [

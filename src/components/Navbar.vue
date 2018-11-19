@@ -29,20 +29,39 @@
     >
       <div class="navbar-start" />
 
-      <div class="navbar-end" />
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <button
+            class="button is-primary"
+            @click="onSignOut"
+          >
+            Sign out
+          </button>
+        </div>
+      </div>
     </div>
   </nav>
 </template>
 
 <script>
+import authService from '@/services/authService';
+import { mapActions } from 'vuex';
+
 export default {
   name: 'Navbar',
   data: () => ({
     isOpen: false,
   }),
   methods: {
+    ...mapActions({
+      clearState: 'clearState',
+    }),
     toggleIsOpen() {
       this.isOpen = !this.isOpen;
+    },
+    async onSignOut() {
+      await authService.signOut();
+      this.clearState();
     },
   },
 };
