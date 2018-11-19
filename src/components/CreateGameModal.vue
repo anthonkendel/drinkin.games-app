@@ -77,7 +77,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.create-game-modal {
-  width: 960px;
-}
 </style>
