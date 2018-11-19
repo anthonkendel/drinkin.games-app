@@ -8,9 +8,12 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    currentUser: {},
+
     signUp: false,
     authentication: false,
     noAuthentication: false,
+    emailVerified: false,
 
     games: [],
   },
@@ -32,9 +35,12 @@ export default new Vuex.Store({
   },
 
   mutations: {
+    setCurrentUser: (state, currentUser) => (state.currentUser = { ...currentUser }),
+
     setSignUp: (state, signUp) => (state.signUp = signUp),
     setAuthentication: (state, authentication) => (state.authentication = authentication),
     setNoAuthentication: (state, noAuthentication) => (state.noAuthentication = noAuthentication),
+    setEmailVerified: (state, emailVerified) => (state.emailVerified = emailVerified),
 
     setGames: (state, games) => (state.games = [...games]),
 
@@ -47,9 +53,12 @@ export default new Vuex.Store({
   },
 
   actions: {
+    setCurrentUser: ({ commit }, currentUser) => commit('setCurrentUser', currentUser),
+
     setSignUp: ({ commit }, signUp) => commit('setSignUp', signUp),
     setAuthentication: ({ commit }, authentication) => commit('setAuthentication', authentication),
     setNoAuthentication: ({ commit }, noAuthentication) => commit('setNoAuthentication', noAuthentication),
+    setEmailVerified: ({ commit }, emailVerified) => commit('setEmailVerified', emailVerified),
 
     setGames: ({ commit }, games) => commit('setGames', games),
     async loadGames({ commit }) {
@@ -63,7 +72,7 @@ export default new Vuex.Store({
   plugins: [
     createPersistedState({
       key: 'drinkingames',
-      paths: ['signUp', 'authentication', 'noAuthentication'],
+      paths: ['signUp', 'authentication', 'noAuthentication', 'emailVerified'],
     }),
   ],
 });

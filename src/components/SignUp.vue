@@ -91,7 +91,8 @@ export default {
     },
     async onSubmit() {
       try {
-        authService.createUserWithEmailAndPassword(this.email, this.password);
+        await authService.createUserWithEmailAndPassword(this.email, this.password);
+        await authService.sendEmailVerification();
         this.setAuthentication(true);
       } catch (e) {
         this.setAuthentication(false);

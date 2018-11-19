@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <CreateGameButton v-if="authentication" />
+    <CreateGameButton v-if="authentication && emailVerified" />
     <Games />
   </div>
 </template>
@@ -15,6 +15,7 @@ export default {
   components: { Games, CreateGameButton },
   computed: {
     ...mapState({
+      emailVerified: 'emailVerified',
       authentication: 'authentication',
     }),
   },

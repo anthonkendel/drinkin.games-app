@@ -12,6 +12,7 @@
         </div>
         <div class="column">
           <section class="section">
+            <EmailVerificationWarning />
             <router-view />
           </section>
         </div>
@@ -23,13 +24,14 @@
 <script>
 import Navbar from '@/components/Navbar';
 import SidebarGames from '@/components/SidebarGames';
-import SignIn from './components/SignIn';
-import SignUp from './components/SignUp';
+import SignIn from '@/components/SignIn';
+import SignUp from '@/components/SignUp';
+import EmailVerificationWarning from '@/components/EmailVerificationWarning';
 import { mapState } from 'vuex';
 
 export default {
   name: 'DrinkinGamesApp',
-  components: { SignUp, SignIn, Navbar, SidebarGames },
+  components: { SignUp, SignIn, Navbar, SidebarGames, EmailVerificationWarning },
   computed: {
     ...mapState({
       signUp: 'signUp',
