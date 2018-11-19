@@ -42,7 +42,7 @@ export default {
       await firestore()
         .collection(GAMES_COLLECTION)
         .add(object);
-      Snackbar.open({ message: 'New game created', type: 'is-success' });
+      Snackbar.open({ message: `${name} game created`, type: 'is-success' });
     } catch (error) {
       Snackbar.open({ message: 'Something went wrong', type: 'is-danger' });
     }
