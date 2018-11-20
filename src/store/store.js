@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import gameService from '@/services/gameService';
+import gameService, { Game } from '@/services/gameService';
 import { getAverage } from '@/common/filters';
 import createPersistedState from 'vuex-persistedstate';
 
@@ -16,6 +16,7 @@ export default new Vuex.Store({
     emailVerified: false,
 
     games: [],
+    game: new Game(),
   },
 
   getters: {
@@ -44,6 +45,8 @@ export default new Vuex.Store({
 
     setGames: (state, games) => (state.games = [...games]),
 
+    setGame: (state, game) => (state.game = game),
+
     clearState: state => {
       state.signUp = false;
       state.authentication = false;
@@ -64,6 +67,12 @@ export default new Vuex.Store({
     async loadGames({ commit }) {
       const games = await gameService.getGames();
       commit('setGames', games);
+    },
+
+    setGame: ({ commit }, game) => commit('setGame', game),
+    async loadGame({ commit }, id) {
+      const game = await gameService.getGame(id);
+      commit('setGame', game);
     },
 
     clearState: ({ commit }) => commit('clearState'),

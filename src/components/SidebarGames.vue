@@ -80,9 +80,9 @@ export default {
 .menu-container {
   position: relative;
   .b-loading {
-    height: 10vh;
-    width: 10vh;
-    margin: 40vh auto;
+    height: 10em;
+    width: 10em;
+    margin: 20vh auto 20vh auto;
   }
 }
 </style>

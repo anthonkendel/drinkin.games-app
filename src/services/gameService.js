@@ -3,8 +3,8 @@ import { Snackbar } from 'buefy/dist/components/snackbar';
 
 const GAMES_COLLECTION = 'games';
 
-class Game {
-  constructor({ id = '', name, description, created = new Date(), updated = new Date() }) {
+export class Game {
+  constructor({ id = '', name = '', description = '', created = new Date(), updated = new Date() } = {}) {
     this.id = id;
     this.name = name;
     this.description = description;
@@ -12,6 +12,23 @@ class Game {
     this.created = created;
     this.updated = updated;
   }
+}
+
+function gameDocumentToGame(document) {
+  const data = document.data();
+
+  const created = new Date(0);
+  created.setSeconds(data.created.seconds);
+
+  const updated = new Date(0);
+  updated.setSeconds(data.updated.seconds);
+
+  return new Game({
+    ...data,
+    created,
+    updated,
+    id: document.id,
+  });
 }
 
 export default {
@@ -22,17 +39,19 @@ export default {
 
     const games = [];
     snapshot.forEach(document => {
-      const data = document.data();
-
-      const created = new Date(0);
-      created.setSeconds(data.created.seconds);
-
-      const updated = new Date(0);
-      updated.setSeconds(data.updated.seconds);
-
-      games.push(new Game({ ...data, created, updated, id: document.id }));
+      const game = gameDocumentToGame(document);
+      games.push(game);
     });
     return games;
+  },
+
+  async getGame(id) {
+    const document = await firestore()
+      .collection(GAMES_COLLECTION)
+      .doc(id)
+      .get();
+    const game = gameDocumentToGame(document);
+    return game;
   },
 
   async createGame({ name, description }) {
