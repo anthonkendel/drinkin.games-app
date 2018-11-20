@@ -8,7 +8,7 @@ import Buefy from 'buefy';
 import Vue from 'vue';
 import authService from '@/services/authService';
 
-Vue.use(Buefy);
+Vue.use(Buefy, { defaultIconPack: 'fa' });
 
 Vue.config.productionTip = false;
 
