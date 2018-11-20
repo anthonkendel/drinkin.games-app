@@ -44,7 +44,7 @@
     </div>
 
     <div class="columns is-centered">
-      <div class="column is-2">
+      <div class="column is-4 has-text-centered">
         <p>Click <a @click="onNoAuthentication">here</a> to continue without an account.</p>
       </div>
     </div>
