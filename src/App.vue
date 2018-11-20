@@ -47,7 +47,16 @@ export default {
 </script>
 
 <style lang="scss">
+@import url('https://fonts.googleapis.com/css?family=Proza+Libre|Roboto|Roboto+Mono');
 @import '~bulma/sass/utilities/_all';
+
+$family-sans-serif: 'Roboto', sans-serif;
+$family-monospace: 'Roboto Mono', monospace;
+
+.title,
+.subtitle {
+  font-family: 'Proza Libre', sans-serif;
+}
 
 $section-padding: 1rem 0.75rem;
 
