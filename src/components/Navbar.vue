@@ -5,12 +5,12 @@
   >
     <div class="container">
       <div class="navbar-brand">
-        <a
+        <router-link
+          :to="{ name: 'Home' }"
           class="navbar-item"
-          href="/"
         >
           <h1 class="title is-5">Drinkin games</h1>
-        </a>
+        </router-link>
 
         <a
           :class="{ 'is-active': isOpen }"

@@ -4,6 +4,7 @@
       :data="games"
       striped
       hoverable
+      @click="onRowClick"
     >
       <template slot-scope="{ row }">
         <b-table-column
@@ -60,8 +61,9 @@ export default {
   },
   methods: {
     ...mapActions({ loadGames: 'loadGames' }),
-    routeToDetails(id) {
-      this.$router.push({ name: 'Details', params: { id } });
+    onRowClick({ id }) {
+      console.log('CLICK', id);
+      this.$router.push({ name: 'Game', params: { id } });
     },
   },
 };

@@ -16,7 +16,7 @@
           <div class="column">
             <section class="section">
               <EmailVerificationWarning />
-              <router-view />
+              <router-view :key="$route.fullPath" />
             </section>
           </div>
         </div>

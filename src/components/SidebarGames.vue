@@ -9,10 +9,12 @@
             class="menu-list"
           >
             <li
-              v-for="(game, index) in topRatedGames"
-              :key="index"
+              v-for="game in topRatedGames"
+              :key="game.id"
             >
-              <a>{{ game.name }}</a>
+              <router-link :to="{ name: 'Game', params: { id: game.id }}">
+                {{ game.name }}
+              </router-link>
             </li>
           </ul>
 
@@ -25,10 +27,12 @@
               class="menu-list"
             >
               <li
-                v-for="(game, index) in newGames"
-                :key="index"
+                v-for="game in newGames"
+                :key="game.id"
               >
-                <a>{{ game.name }}</a>
+                <router-link :to="{ name: 'Game', params: { id: game.id }}">
+                  {{ game.name }}
+                </router-link>
               </li>
             </ul>
 
