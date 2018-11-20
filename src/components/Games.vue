@@ -1,5 +1,5 @@
 <template>
-  <section class="section">
+  <div>
     <b-table
       :data="games"
       striped
@@ -24,6 +24,7 @@
           field="rating"
           label="Rating"
           sortable
+          numeric
         >
           {{ row.rating | average }}
         </b-table-column>
@@ -36,7 +37,7 @@
         </div>
       </template>
     </b-table>
-  </section>
+  </div>
 </template>
 
 <script>

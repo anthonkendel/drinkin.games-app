@@ -1,20 +1,24 @@
 <template>
   <div id="app">
     <div v-if="!authentication && !noAuthentication">
-      <SignUp v-if="signUp" />
-      <SignIn v-else />
+      <div class="container">
+        <SignUp v-if="signUp" />
+        <SignIn v-else />
+      </div>
     </div>
     <div v-else-if="authentication || noAuthentication">
       <Navbar />
-      <div class="columns">
-        <div class="column is-2">
-          <SidebarGames />
-        </div>
-        <div class="column">
-          <section class="section">
-            <EmailVerificationWarning />
-            <router-view />
-          </section>
+      <div class="container">
+        <div class="columns">
+          <div class="column is-2 is-hidden-touch">
+            <SidebarGames />
+          </div>
+          <div class="column">
+            <section class="section">
+              <EmailVerificationWarning />
+              <router-view />
+            </section>
+          </div>
         </div>
       </div>
     </div>
@@ -45,7 +49,11 @@ export default {
 <style lang="scss">
 @import '~bulma/sass/utilities/_all';
 
-$section-padding: 1.5rem 0.75rem;
+$section-padding: 1rem 0.75rem;
+
+$radius-small: 2px;
+$radius: 3px;
+$radius-large: 4px;
 
 @import '~bulma';
 @import '~buefy/src/scss/buefy';
