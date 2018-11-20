@@ -5,41 +5,21 @@
         <p class="modal-card-title">Create game</p>
       </header>
       <section class="modal-card-body">
-        <div class="field is-horizontal">
-          <div class="field-label">
-            <label class="label">Name</label>
-          </div>
-          <div class="field-body">
-            <div class="field">
-              <p class="control">
-                <input
-                  v-model="name"
-                  required
-                  class="input"
-                  type="text"
-                >
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="field is-horizontal">
-          <div class="field-label">
-            <label class="label">Description</label>
-          </div>
-          <div class="field-body">
-            <div class="field">
-              <p class="control">
-                <textarea
-                  v-model="description"
-                  required
-                  class="textarea"
-                  rows="10"
-                />
-              </p>
-            </div>
-          </div>
-        </div>
+        <b-field label="Name">
+          <b-input
+            v-model="name"
+            required
+            type="text"
+          />
+        </b-field>
+        <b-field label="Description">
+          <b-input
+            v-model="description"
+            required
+            type="textarea"
+            rows="10"
+          />
+        </b-field>
       </section>
       <footer class="modal-card-foot buttons is-right">  
         <button
