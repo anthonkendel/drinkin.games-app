@@ -58,11 +58,21 @@ $family-monospace: 'Roboto Mono', monospace;
   font-family: 'Proza Libre', sans-serif;
 }
 
+$size-1: 2.7rem;
+$size-2: 2.2rem;
+$size-3: 1.7rem;
+$size-4: 1.2rem;
+$size-5: 1.15rem;
+$size-6: 0.85rem;
+$size-7: 0.7rem;
+
 $section-padding: 1rem 0.75rem;
 
 $radius-small: 2px;
 $radius: 3px;
 $radius-large: 4px;
+
+$speed: 100ms;
 
 @import '~bulma';
 @import '~buefy/src/scss/buefy';
