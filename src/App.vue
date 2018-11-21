@@ -8,19 +8,19 @@
     </div>
     <div v-else-if="authentication || noAuthentication">
       <Navbar />
-      <div class="container">
-        <div class="columns">
-          <div class="column is-2 is-hidden-touch">
-            <SidebarGames />
-          </div>
-          <div class="column">
-            <section class="section">
+      <section class="section">
+        <div class="container">
+          <div class="columns">
+            <div class="column is-2 is-hidden-touch">
+              <SidebarGames />
+            </div>
+            <div class="column">
               <EmailVerificationWarning />
               <router-view :key="$route.fullPath" />
-            </section>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   </div>
 </template>

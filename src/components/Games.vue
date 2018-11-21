@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <section class="section">
     <b-table
       :data="games"
       striped
@@ -38,7 +38,7 @@
         </div>
       </template>
     </b-table>
-  </div>
+  </section>
 </template>
 
 <script>
