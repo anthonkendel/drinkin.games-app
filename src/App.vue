@@ -74,22 +74,7 @@ $radius-large: 4px;
 
 $speed: 100ms;
 
-$primary: hsl(48, 100%, 68%);
-$primary-invert: findColorInvert($primary);
-
-$info: hsl(200, 100%, 68%);
-$info-invert: findColorInvert($info);
-
-$success: hsl(150, 100%, 68%);
-$success-invert: findColorInvert($success);
-
-$warning: hsl(30, 100%, 68%);
-$warning-invert: findColorInvert($warning);
-
-$danger: hsl(10, 100%, 68%);
-$danger-invert: findColorInvert($danger);
-
-// Setup $colors to use as bulma classes (e.g. 'is-twitter')
+// Setup $colors to use as bulma classes
 $colors: (
   'white': (
     $white,
@@ -128,6 +113,10 @@ $colors: (
     $danger-invert,
   ),
 );
+
+.loading-overlay .loading-background {
+  background: transparent !important;
+}
 
 @import '~bulma';
 @import '~buefy/src/scss/buefy';

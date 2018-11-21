@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="navbar is-light"
+    class="navbar"
     role="navigation"
   >
     <div class="container">
@@ -9,7 +9,7 @@
           :to="{ name: 'Home' }"
           class="navbar-item"
         >
-          <h1 class="title is-5">Drinkin games</h1>
+          <h1 class="title is-6">Drinkin games</h1>
         </router-link>
 
         <a
