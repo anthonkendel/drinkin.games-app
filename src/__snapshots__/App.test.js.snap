@@ -5,17 +5,17 @@ exports[`App.vue should match snapshot 1`] = `
   id="app"
 >
   <div>
-    <section
-      class="section"
+    <div
+      class="container"
     >
-      <div
+      <section
         class="section"
       >
         <div
           class="columns is-centered"
         >
           <div
-            class="column is-2"
+            class="column is-4"
           >
             <h2
               class="title"
@@ -29,32 +29,37 @@ exports[`App.vue should match snapshot 1`] = `
               >
                 <label
                   class="label"
-                  for="email"
                 >
                   
-              Email
-            
+            Email
+        
                 </label>
                  
-                <p
-                  class="control has-icons-right"
+                <div
+                  class="control has-icons-left is-clearfix"
                 >
                   <input
+                    autocomplete="on"
                     class="input"
-                    id="email"
                     placeholder="Email"
                     required="required"
                     type="email"
                   />
                    
                   <span
-                    class="icon is-right"
+                    class="icon is-left"
                   >
                     <i
-                      class="fas fa-user"
+                      class="fa fa-user fa-lg"
                     />
                   </span>
-                </p>
+                   
+                  <!---->
+                   
+                  <!---->
+                </div>
+                 
+                <!---->
               </div>
                
               <div
@@ -62,32 +67,43 @@ exports[`App.vue should match snapshot 1`] = `
               >
                 <label
                   class="label"
-                  for="password"
                 >
                   
-              Password
-            
+            Password
+        
                 </label>
                  
-                <p
-                  class="control has-icons-right"
+                <div
+                  class="control has-icons-left has-icons-right is-clearfix"
                 >
                   <input
+                    autocomplete="on"
                     class="input"
-                    id="password"
                     placeholder="Password"
                     required="required"
                     type="password"
                   />
                    
                   <span
-                    class="icon is-right"
+                    class="icon is-left"
                   >
                     <i
-                      class="fas fa-lock"
+                      class="fa fa-lock fa-lg"
                     />
                   </span>
-                </p>
+                   
+                  <span
+                    class="icon is-right has-text-primary is-clickable"
+                  >
+                    <i
+                      class="fa fa-eye fa-lg"
+                    />
+                  </span>
+                   
+                  <!---->
+                </div>
+                 
+                <!---->
               </div>
                
               <div
@@ -111,8 +127,8 @@ exports[`App.vue should match snapshot 1`] = `
                     type="button"
                   >
                     
-                Sign up
-              
+              Sign up
+            
                   </button>
                 </p>
               </div>
@@ -124,7 +140,7 @@ exports[`App.vue should match snapshot 1`] = `
           class="columns is-centered"
         >
           <div
-            class="column is-2"
+            class="column is-4 has-text-centered"
           >
             <p>
               Click 
@@ -135,8 +151,8 @@ exports[`App.vue should match snapshot 1`] = `
             </p>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   </div>
 </div>
 `;
