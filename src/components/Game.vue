@@ -68,6 +68,7 @@ export default {
   computed: {
     ...mapState({
       game: 'game',
+      currentUser: 'currentUser',
     }),
   },
   async created() {

@@ -4,11 +4,19 @@ import { Snackbar } from 'buefy/dist/components/snackbar';
 const GAMES_COLLECTION = 'games';
 
 export class Game {
-  constructor({ id = '', name = '', description = '', created = new Date(), updated = new Date() } = {}) {
+  constructor({
+    id = '',
+    name = '',
+    description = '',
+    createdBy = '',
+    created = new Date(),
+    updated = new Date(),
+  } = {}) {
     this.id = id;
     this.name = name;
     this.description = description;
     this.rating = [];
+    this.createdBy = createdBy;
     this.created = created;
     this.updated = updated;
   }
@@ -54,16 +62,28 @@ export default {
     return game;
   },
 
-  async createGame({ name, description }) {
-    const game = new Game({ name, description });
-    const object = { ...game };
+  async createGame({ name, description, createdBy }) {
+    const game = new Game({
+      name,
+      description,
+      createdBy,
+    });
+    const object = {
+      ...game,
+    };
     try {
       await firestore()
         .collection(GAMES_COLLECTION)
         .add(object);
-      Snackbar.open({ message: `${name} game created`, type: 'is-success' });
+      Snackbar.open({
+        message: `${name} game created`,
+        type: 'is-success',
+      });
     } catch (error) {
-      Snackbar.open({ message: 'Something went wrong', type: 'is-danger' });
+      Snackbar.open({
+        message: 'Something went wrong',
+        type: 'is-danger',
+      });
     }
   },
 };

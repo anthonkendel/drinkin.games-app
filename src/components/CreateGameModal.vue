@@ -36,6 +36,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
 import gameService from '@/services/gameService';
 
 export default {
@@ -44,11 +45,18 @@ export default {
     name: '',
     description: '',
   }),
+  computed: {
+    ...mapState({
+      currentUser: 'currentUser',
+    }),
+  },
   methods: {
     async onFormSubmit() {
+      const createdBy = this.currentUser.uid || undefined;
       await gameService.createGame({
         name: this.name,
         description: this.description,
+        createdBy,
       });
       this.$parent.close();
     },
