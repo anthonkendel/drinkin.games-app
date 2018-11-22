@@ -31,12 +31,34 @@
         <div class="navbar-start" />
 
         <div class="navbar-end">
-          <div class="navbar-item">
+          <div
+            v-if="authentication"
+            class="navbar-item"
+          >
             <button
-              class="button is-primary"
+              class="button is-danger"
               @click="onSignOut"
             >
-              Sign out
+              <span>Sign out</span>
+              <b-icon
+                icon="user-minus"
+                size="is-small"
+              />
+            </button>
+          </div>
+          <div
+            v-else-if="noAuthentication"
+            class="navbar-item"
+          >
+            <button
+              class="button is-info"
+              @click="onSignUp"
+            >
+              <b-icon
+                icon="user-plus"
+                size="is-small"
+              />
+              <span>Sign up</span>
             </button>
           </div>
         </div>
@@ -47,16 +69,23 @@
 
 <script>
 import authService from '@/services/authService';
-import { mapActions } from 'vuex';
+import { mapActions, mapState } from 'vuex';
 
 export default {
   name: 'Navbar',
   data: () => ({
     isOpen: false,
   }),
+  computed: {
+    ...mapState({
+      authentication: 'authentication',
+      noAuthentication: 'noAuthentication',
+    }),
+  },
   methods: {
     ...mapActions({
       clearState: 'clearState',
+      setSignUp: 'setSignUp',
     }),
     toggleIsOpen() {
       this.isOpen = !this.isOpen;
@@ -64,6 +93,10 @@ export default {
     async onSignOut() {
       await authService.signOut();
       this.clearState();
+    },
+    onSignUp() {
+      this.clearState();
+      this.setSignUp(true);
     },
   },
 };

@@ -10,7 +10,6 @@
               required
               type="email"
               placeholder="Email"
-              icon="user"
             />
           </b-field>
 
@@ -21,13 +20,18 @@
               type="password"
               password-reveal
               placeholder="Password"
-              icon="lock"
             />
           </b-field>
 
           <div class="field is-grouped">
             <p class="control is-expanded">
-              <button class="button is-primary is-fullwidth">Sign in</button>
+              <button class="button is-primary is-fullwidth">
+                <span>Sign in</span>
+                <b-icon
+                  icon="user-check"
+                  size="is-small"
+                />
+              </button>
             </p>
             <p class="control is-expanded">
               <button
@@ -35,7 +39,11 @@
                 class="button is-text is-fullwidth"
                 @click="onSignUp"
               >
-                Sign up
+                <span>Sign up</span>
+                <b-icon
+                  icon="user-plus"
+                  size="is-small"
+                />
               </button>
             </p>
           </div>

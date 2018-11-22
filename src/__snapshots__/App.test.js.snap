@@ -36,7 +36,7 @@ exports[`App.vue should match snapshot 1`] = `
                 </label>
                  
                 <div
-                  class="control has-icons-left is-clearfix"
+                  class="control is-clearfix"
                 >
                   <input
                     autocomplete="on"
@@ -46,13 +46,7 @@ exports[`App.vue should match snapshot 1`] = `
                     type="email"
                   />
                    
-                  <span
-                    class="icon is-left"
-                  >
-                    <i
-                      class="fa fa-user fa-lg"
-                    />
-                  </span>
+                  <!---->
                    
                   <!---->
                    
@@ -74,7 +68,7 @@ exports[`App.vue should match snapshot 1`] = `
                 </label>
                  
                 <div
-                  class="control has-icons-left has-icons-right is-clearfix"
+                  class="control has-icons-right is-clearfix"
                 >
                   <input
                     autocomplete="on"
@@ -84,13 +78,7 @@ exports[`App.vue should match snapshot 1`] = `
                     type="password"
                   />
                    
-                  <span
-                    class="icon is-left"
-                  >
-                    <i
-                      class="fa fa-lock fa-lg"
-                    />
-                  </span>
+                  <!---->
                    
                   <span
                     class="icon is-right has-text-primary is-clickable"
@@ -115,7 +103,17 @@ exports[`App.vue should match snapshot 1`] = `
                   <button
                     class="button is-primary is-fullwidth"
                   >
-                    Sign in
+                    <span>
+                      Sign in
+                    </span>
+                     
+                    <span
+                      class="icon is-small"
+                    >
+                      <i
+                        class="fa fa-user-check"
+                      />
+                    </span>
                   </button>
                 </p>
                  
@@ -126,9 +124,17 @@ exports[`App.vue should match snapshot 1`] = `
                     class="button is-text is-fullwidth"
                     type="button"
                   >
-                    
-              Sign up
-            
+                    <span>
+                      Sign up
+                    </span>
+                     
+                    <span
+                      class="icon is-small"
+                    >
+                      <i
+                        class="fa fa-user-plus"
+                      />
+                    </span>
                   </button>
                 </p>
               </div>
