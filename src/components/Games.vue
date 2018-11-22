@@ -63,7 +63,7 @@ export default {
     ...mapActions({ loadGames: 'loadGames' }),
     onRowClick({ id }) {
       console.log('CLICK', id);
-      this.$router.push({ name: 'Game', params: { id } });
+      this.$router.push({ name: 'Details', params: { id } });
     },
   },
 };

@@ -12,7 +12,7 @@
             :key="game.id"
           >
             <router-link
-              :to="{ name: 'Game', params: { id: game.id }}"
+              :to="{ name: 'Details', params: { id: game.id }}"
               exact-active-class="is-active"
             >
               {{ game.name }}
@@ -33,7 +33,7 @@
               :key="game.id"
             >
               <router-link
-                :to="{ name: 'Game', params: { id: game.id }}"
+                :to="{ name: 'Details', params: { id: game.id }}"
                 exact-active-class="is-active"
               >
                 {{ game.name }}
