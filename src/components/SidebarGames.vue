@@ -11,7 +11,10 @@
             v-for="game in topRatedGames"
             :key="game.id"
           >
-            <router-link :to="{ name: 'Game', params: { id: game.id }}">
+            <router-link
+              :to="{ name: 'Game', params: { id: game.id }}"
+              exact-active-class="is-active"
+            >
               {{ game.name }}
             </router-link>
           </li>
@@ -29,7 +32,10 @@
               v-for="game in newGames"
               :key="game.id"
             >
-              <router-link :to="{ name: 'Game', params: { id: game.id }}">
+              <router-link
+                :to="{ name: 'Game', params: { id: game.id }}"
+                exact-active-class="is-active"
+              >
                 {{ game.name }}
               </router-link>
             </li>

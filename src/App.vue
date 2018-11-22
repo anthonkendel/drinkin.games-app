@@ -74,6 +74,8 @@ $radius-large: 4px;
 
 $speed: 100ms;
 
+$menu-item-active-background-color: $primary;
+
 // Setup $colors to use as bulma classes
 $colors: (
   'white': (
