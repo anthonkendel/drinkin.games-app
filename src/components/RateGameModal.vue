@@ -30,6 +30,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
 import gameService from '@/services/gameService';
 
 export default {
@@ -44,8 +45,12 @@ export default {
     rating: 3,
   }),
   methods: {
+    ...mapActions({
+      loadGame: 'loadGame',
+    }),
     async onFormSubmit() {
       await gameService.rateGame(this.id, this.rating);
+      this.loadGame(this.id);
       this.$parent.close();
     },
   },
