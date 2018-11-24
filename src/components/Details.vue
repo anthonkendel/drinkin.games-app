@@ -1,10 +1,12 @@
 <template>
-  <div class="details columns">
+  <div class="columns is-desktop details">
     <div class="column">
       <GameComponent />
     </div>
-    <div class="column is-1">
-      <RateGameButton />
+    <div class="column is-narrow">
+      <div class="buttons">
+        <RateGameButton />
+      </div>
     </div>
   </div>
 </template>
