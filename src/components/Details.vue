@@ -3,9 +3,12 @@
     <div class="column">
       <GameComponent />
     </div>
-    <div class="column is-narrow">
+    <div
+      v-if="authentication && emailVerified"
+      class="column is-narrow"
+    >
       <div class="buttons">
-        <RateGameButton />
+        <RateGameButton v-if="authentication && emailVerified" />
       </div>
     </div>
   </div>
@@ -13,7 +16,7 @@
 
 <script>
 import { Game } from '@/services/gameService';
-import { mapActions } from 'vuex';
+import { mapActions, mapState } from 'vuex';
 import RateGameButton from '@/components/RateGameButton';
 import GameComponent from '@/components/Game';
 
@@ -25,6 +28,12 @@ export default {
       type: String,
       default: '',
     },
+  },
+  computed: {
+    ...mapState({
+      emailVerified: 'emailVerified',
+      authentication: 'authentication',
+    }),
   },
   async created() {
     this.setGame(new Game());
