@@ -8,6 +8,7 @@ export class Game {
     id = '',
     name = '',
     description = '',
+    rating = [],
     createdBy = '',
     created = new Date(),
     updated = new Date(),
@@ -15,7 +16,7 @@ export class Game {
     this.id = id;
     this.name = name;
     this.description = description;
-    this.rating = [];
+    this.rating = rating;
     this.createdBy = createdBy;
     this.created = created;
     this.updated = updated;
@@ -60,6 +61,28 @@ export default {
       .get();
     const game = gameDocumentToGame(document);
     return game;
+  },
+
+  async rateGame(id, rating) {
+    try {
+      const game = await this.getGame(id);
+      const currentRating = game.rating;
+      const newRating = [...currentRating, Number(rating)];
+      await firestore()
+        .collection(GAMES_COLLECTION)
+        .doc(id)
+        .update({ rating: newRating });
+      Snackbar.open({
+        message: `${game.name} rated`,
+        type: 'is-success',
+      });
+    } catch (error) {
+      console.log('Error:', error);
+      Snackbar.open({
+        message: 'Something went wrong',
+        type: 'is-danger',
+      });
+    }
   },
 
   async createGame({ name, description, createdBy }) {

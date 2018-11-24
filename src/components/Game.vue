@@ -49,9 +49,8 @@
 </template>
 
 <script>
-import { Game } from '@/services/gameService';
 import { dateInWords, getAverage } from '../common/filters';
-import { mapState, mapActions } from 'vuex';
+import { mapState } from 'vuex';
 
 export default {
   name: 'Game',
@@ -59,26 +58,10 @@ export default {
     average: getAverage,
     dateInWords: dateInWords,
   },
-  props: {
-    id: {
-      type: String,
-      default: '',
-    },
-  },
   computed: {
     ...mapState({
       game: 'game',
       currentUser: 'currentUser',
-    }),
-  },
-  async created() {
-    this.setGame(new Game());
-    this.loadGame(this.id);
-  },
-  methods: {
-    ...mapActions({
-      setGame: 'setGame',
-      loadGame: 'loadGame',
     }),
   },
 };
