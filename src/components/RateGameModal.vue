@@ -15,7 +15,7 @@
           />
         </b-field>
       </section>
-      <footer class="modal-card-foot buttons is-right">  
+      <footer class="modal-card-foot buttons is-right">
         <button
           type="button"
           class="button is-text"
@@ -31,7 +31,7 @@
 
 <script>
 import { mapActions } from 'vuex';
-import gameService from '@/services/gameService';
+import { gameService } from '@/services/gameService';
 
 export default {
   name: 'RateGameModal',

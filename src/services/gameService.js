@@ -40,7 +40,7 @@ function gameDocumentToGame(document) {
   });
 }
 
-export default {
+export const gameService = {
   async getGames() {
     const snapshot = await firestore()
       .collection(GAMES_COLLECTION)

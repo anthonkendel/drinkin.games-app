@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import gameService, { Game } from '@/services/gameService';
+import { gameService, Game } from '@/services/gameService';
 import { getAverage } from '@/common/filters';
 import createPersistedState from 'vuex-persistedstate';
 

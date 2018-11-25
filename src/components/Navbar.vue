@@ -68,7 +68,7 @@
 </template>
 
 <script>
-import authService from '@/services/authService';
+import { authService } from '@/services/authService';
 import { mapActions, mapState } from 'vuex';
 
 export default {

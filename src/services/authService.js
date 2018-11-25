@@ -2,7 +2,7 @@ import { auth } from 'firebase';
 import store from '@/store/store';
 import { Snackbar } from 'buefy/dist/components/snackbar';
 
-export default {
+export const authService = {
   listenOnAuthStateChanged() {
     auth().onAuthStateChanged(user => {
       if (user) {

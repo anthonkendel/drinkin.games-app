@@ -6,7 +6,7 @@ import router from '@/router/router';
 import store from '@/store/store';
 import Buefy from 'buefy';
 import Vue from 'vue';
-import authService from '@/services/authService';
+import { authService } from '@/services/authService';
 
 Vue.use(Buefy, { defaultIconPack: 'fa' });
 
