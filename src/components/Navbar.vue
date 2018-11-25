@@ -36,7 +36,7 @@
             class="navbar-item"
           >
             <button
-              class="button is-danger"
+              class="button is-dark"
               @click="onSignOut"
             >
               <span>Sign out</span>
