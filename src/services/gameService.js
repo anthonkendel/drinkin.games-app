@@ -85,6 +85,25 @@ export const gameService = {
     }
   },
 
+  async deleteGame(id) {
+    try {
+      const game = await this.getGame(id);
+      await firestore()
+        .collection(GAMES_COLLECTION)
+        .doc(id)
+        .delete();
+      Snackbar.open({
+        message: `${game.name} game deleted`,
+        type: 'is-success',
+      });
+    } catch (error) {
+      Snackbar.open({
+        message: 'Something went wrong',
+        type: 'is-danger',
+      });
+    }
+  },
+
   async createGame({ name, description, createdBy }) {
     const game = new Game({
       name,

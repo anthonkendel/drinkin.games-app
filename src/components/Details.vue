@@ -4,11 +4,12 @@
       <GameComponent />
     </div>
     <div
-      v-if="authentication && emailVerified"
-      class="column is-narrow"
+      v-if="game.id && authentication && emailVerified"
+      class="column is-2-desktop"
     >
       <div class="buttons">
         <RateGameButton v-if="authentication && emailVerified" />
+        <DeleteGameButton v-if="authentication && emailVerified && currentUserCreatedGame" />
       </div>
     </div>
   </div>
@@ -19,10 +20,11 @@ import { Game } from '@/services/gameService';
 import { mapActions, mapState } from 'vuex';
 import RateGameButton from '@/components/RateGameButton';
 import GameComponent from '@/components/Game';
+import DeleteGameButton from './DeleteGameButton';
 
 export default {
   name: 'Details',
-  components: { GameComponent, RateGameButton },
+  components: { DeleteGameButton, GameComponent, RateGameButton },
   props: {
     id: {
       type: String,
@@ -33,7 +35,14 @@ export default {
     ...mapState({
       emailVerified: 'emailVerified',
       authentication: 'authentication',
+      game: 'game',
+      currentUser: 'currentUser',
     }),
+    currentUserCreatedGame() {
+      const createdBy = this.game.createdBy;
+      const currentUserId = this.currentUser.uid;
+      return createdBy === currentUserId;
+    },
   },
   async created() {
     this.setGame(new Game());
