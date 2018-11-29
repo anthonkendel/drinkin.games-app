@@ -2,6 +2,14 @@
   <section class="section">
     <div class="columns is-centered">
       <div class="column is-4">
+        <div class="section">
+          <figure class="image">
+            <img
+              src="./../assets/drinkin-games-long.jpg"
+              alt="drinking games logo"
+            >
+          </figure>
+        </div>
         <h2 class="title">Sign up</h2>
         <form @submit.prevent.stop="onSubmit">
           <b-field label="Email">
@@ -25,7 +33,7 @@
 
           <div class="field is-grouped">
             <p class="control is-expanded">
-              <button class="button is-info is-fullwidth">
+              <button class="button is-dark is-fullwidth">
                 <span>Sign up</span>
                 <b-icon
                   icon="user-plus"

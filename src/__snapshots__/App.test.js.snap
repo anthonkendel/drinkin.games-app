@@ -17,6 +17,19 @@ exports[`App.vue should match snapshot 1`] = `
           <div
             class="column is-4"
           >
+            <div
+              class="section"
+            >
+              <figure
+                class="image"
+              >
+                <img
+                  alt="drinking games logo"
+                  src="./../assets/drinkin-games-long.jpg"
+                />
+              </figure>
+            </div>
+             
             <h2
               class="title"
             >

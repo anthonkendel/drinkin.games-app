@@ -2,6 +2,14 @@
   <section class="section">
     <div class="columns is-centered">
       <div class="column is-4">
+        <div class="section">
+          <figure class="image">
+            <img
+              src="./../assets/drinkin-games-long.jpg"
+              alt="drinking games logo"
+            >
+          </figure>
+        </div>
         <h2 class="title">Sign in</h2>
         <form @submit.prevent.stop="onSubmit">
           <b-field label="Email">

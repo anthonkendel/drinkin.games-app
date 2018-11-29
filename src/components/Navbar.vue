@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="navbar"
+    class="navbar is-info"
     role="navigation"
   >
     <div class="container">
@@ -9,7 +9,10 @@
           :to="{ name: 'Home' }"
           class="navbar-item"
         >
-          <h1 class="title is-6">Drinkin games</h1>
+          <img
+            src="./../assets/drinkin-games-short-transparent.png"
+            alt="drinking games logo"
+          >
         </router-link>
 
         <a
@@ -51,7 +54,7 @@
             class="navbar-item"
           >
             <button
-              class="button is-info"
+              class="button is-dark"
               @click="onSignUp"
             >
               <b-icon

@@ -47,7 +47,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import url('https://fonts.googleapis.com/css?family=Proza+Libre|Roboto|Roboto+Mono');
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700+Libre|Roboto|Roboto+Mono');
 @import '~bulma/sass/utilities/_all';
 
 $family-sans-serif: 'Roboto', sans-serif;
@@ -55,8 +55,27 @@ $family-monospace: 'Roboto Mono', monospace;
 
 .title,
 .subtitle {
-  font-family: 'Proza Libre', sans-serif;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
 }
+
+$yellow: #f2ca52;
+$orange: #d9631e;
+$brown: #591902;
+$dark-brown: #260b01;
+$dark-red: #260a07;
+
+$primary: $brown;
+$primary-invert: findColorInvert($primary);
+
+$info: $yellow;
+$info-invert: findColorInvert($info);
+
+$link: $dark-red;
+$link-invert: findColorInvert($link);
+
+$dark: $dark-brown;
+$dark-invert: findColorInvert($dark);
 
 $size-1: 2.7rem;
 $size-2: 2.2rem;
@@ -75,6 +94,8 @@ $radius-large: 4px;
 $speed: 100ms;
 
 $menu-item-active-background-color: $primary;
+
+$navbar-height: 4rem;
 
 // Setup $colors to use as bulma classes
 $colors: (
