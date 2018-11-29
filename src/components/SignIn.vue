@@ -3,12 +3,16 @@
     <div class="columns is-centered">
       <div class="column is-4">
         <div class="section">
-          <figure class="image">
-            <img
-              src="./../assets/drinkin-games-long.jpg"
-              alt="drinking games logo"
-            >
-          </figure>
+          <div class="level">
+            <div class="level-item">
+              <figure class="image is-128x128">
+                <img
+                  src="./../assets/drinkin-games-short-transparent.png"
+                  alt="drinking games logo"
+                >
+              </figure> 
+            </div>
+          </div>
         </div>
         <h2 class="title">Sign in</h2>
         <form @submit.prevent.stop="onSubmit">

@@ -59,11 +59,15 @@ $family-monospace: 'Roboto Mono', monospace;
   font-weight: bold;
 }
 
+$dark-brown: #260b01;
 $yellow: #f2ca52;
+
 $orange: #d9631e;
 $brown: #591902;
-$dark-brown: #260b01;
-$dark-red: #260a07;
+
+$lily: #a28f9d;
+$teal: #628395;
+$lime: #c2efb3;
 
 $primary: $brown;
 $primary-invert: findColorInvert($primary);
@@ -71,11 +75,25 @@ $primary-invert: findColorInvert($primary);
 $info: $yellow;
 $info-invert: findColorInvert($info);
 
-$link: $dark-red;
+$danger: $lily;
+$danger-invert: findColorInvert($danger);
+
+$warning: $teal;
+$warning-invert: findColorInvert($warning);
+
+$success: $lime;
+$success-invert: findColorInvert($success);
+
+$link: $teal;
 $link-invert: findColorInvert($link);
 
 $dark: $dark-brown;
 $dark-invert: findColorInvert($dark);
+
+$text: $dark-brown;
+$text-invert: findColorInvert($text);
+
+$link: $brown;
 
 $size-1: 2.7rem;
 $size-2: 2.2rem;
@@ -87,9 +105,9 @@ $size-7: 0.7rem;
 
 $section-padding: 1rem 0.75rem;
 
-$radius-small: 2px;
-$radius: 3px;
-$radius-large: 4px;
+$radius-small: 1px;
+$radius: 2px;
+$radius-large: 3px;
 
 $speed: 100ms;
 
@@ -97,44 +115,50 @@ $menu-item-active-background-color: $primary;
 
 $navbar-height: 4rem;
 
-// Setup $colors to use as bulma classes
-$colors: (
-  'white': (
-    $white,
-    $black,
+$colors: mergeColorMaps(
+  (
+    'white': (
+      $white,
+      $black,
+    ),
+    'black': (
+      $black,
+      $white,
+    ),
+    'light': (
+      $light,
+      $light-invert,
+    ),
+    'dark': (
+      $dark,
+      $dark-invert,
+    ),
+    'primary': (
+      $primary,
+      $primary-invert,
+    ),
+    'link': (
+      $link,
+      $link-invert,
+    ),
+    'info': (
+      $info,
+      $info-invert,
+    ),
+    'success': (
+      $success,
+      $success-invert,
+    ),
+    'warning': (
+      $warning,
+      $warning-invert,
+    ),
+    'danger': (
+      $danger,
+      $danger-invert,
+    ),
   ),
-  'black': (
-    $black,
-    $white,
-  ),
-  'light': (
-    $light,
-    $light-invert,
-  ),
-  'dark': (
-    $dark,
-    $dark-invert,
-  ),
-  'primary': (
-    $primary,
-    $primary-invert,
-  ),
-  'info': (
-    $info,
-    $info-invert,
-  ),
-  'success': (
-    $success,
-    $success-invert,
-  ),
-  'warning': (
-    $warning,
-    $warning-invert,
-  ),
-  'danger': (
-    $danger,
-    $danger-invert,
-  ),
+  $custom-colors
 );
 
 .loading-overlay .loading-background {

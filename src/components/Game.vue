@@ -11,24 +11,20 @@
 
       <div class="columns">
         <div class="column">
-          <b-field
-            grouped
-            group-multiline
-          >
-            <div class="control">
-              <b-taglist attached>
-                <b-tag type="is-dark">Created</b-tag>
-                <b-tag type="is-success">{{ game.created | dateInWords }} ago</b-tag>
-              </b-taglist>
+          <div class="level">
+            <div class="level-item has-text-centered">
+              <div>
+                <p class="heading">Created</p>
+                <p class="title">{{ game.created | dateInWords }} ago</p>
+              </div>
             </div>
-
-            <div class="control">
-              <b-taglist attached>
-                <b-tag type="is-dark">Rating</b-tag>
-                <b-tag type="is-info">{{ game.rating | average }}</b-tag>
-              </b-taglist>
+            <div class="level-item has-text-centered">
+              <div>
+                <p class="heading">Rating</p>
+                <p class="title">{{ game.rating | average }}</p>
+              </div>
             </div>
-          </b-field>
+          </div>
         </div>
       </div>
 
